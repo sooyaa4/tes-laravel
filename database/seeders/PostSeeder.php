@@ -28,8 +28,8 @@ class PostSeeder extends Seeder
             ]);
 
             Detail::create([
-                'start_date' => $faker->dateTimeBetween('-1 month', '+1 month'),
-                'end_date' => $faker->dateTimeBetween('+1 month', '+2 months'),
+                'start_date' => $faker->dateTimeBetween('-1 month', '+1 month')->format('Y-m-d H:i:s'),
+                'end_date' => $faker->dateTimeBetween('+1 month', '+2 months')->format('Y-m-d H:i:s'),
                 'description' => $faker->paragraph,
                 'tags' => json_encode(['business', 'music', 'foods', 'charity', 'health', 'finance']), // Format JSON
                 'post_id' => $header->id

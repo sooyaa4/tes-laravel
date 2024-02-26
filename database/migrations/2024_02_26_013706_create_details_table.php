@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->id();
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->timestamp('start_date');
+            $table->timestamp('end_date')->nullable();
             $table->text('description');
             $table->json('tags');
             $table->unsignedBigInteger('post_id');
