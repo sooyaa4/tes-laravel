@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ConsumeApiController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,4 +18,6 @@ Route::get('/', function () {
     return view('pages.login');
 });
 
-Route::get('/data-post', [ConsumeApiController::class, 'index'])->name('data.post');
+Route::get('/data-post', function () {
+    return view('pages.data-post');
+} )->name('data.post');
